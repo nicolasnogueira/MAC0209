@@ -2,10 +2,12 @@ import edu.princeton.cs.algs4.*;
 
 public class AnalyticResults {
     public static void main(String[] args) {
+
+        int pontos = 10;
         double y0 = 10;
         double v0 = 0;
         double t = 0;
-        double dt = 0.01; // time step
+        double dt; // time step
         double y = y0;
         double v = v0;
         double g = 9.8;   // gravitational field
