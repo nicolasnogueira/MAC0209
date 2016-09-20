@@ -99,7 +99,6 @@ public class Travessia {
 
 		if (tipo) {
 			//MRU
-			System.out.println("Vel esperada cte");
 			t0 = 0;
 			s0 = 0;
 			for (int i = 1; i <= N; i++) {
@@ -132,7 +131,9 @@ public class Travessia {
        		s0 = posicao[i];
        		StdDraw.filledCircle(tempos[i], posicao[i], .5);
  			StdDraw.setPenColor(StdDraw.BLACK);
-       		StdDraw.textLeft(tempos[i], posicao[i],"(" + tempos[i] + ", " + posicao[i] + ")");
+ 			String stempo = String.format("%.3f", tempos[i]);
+ 			String sposicao = String.format("%.3f", posicao[i]);
+       		StdDraw.textLeft(tempos[i], posicao[i],"(" + stempo+ ", " + sposicao + ")");
        	}
        	/*StdDraw.setPenColor(StdDraw.BLACK);
        	for (int i = 1; i <= 10; i++)
