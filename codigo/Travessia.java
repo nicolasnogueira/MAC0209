@@ -1,3 +1,16 @@
+/*******************************************************************
+ * Nome: 	Artur Alvarez - 9292931
+ *			Mateus Anjos - 9298191
+ *			Nícolas Nogueira - 9277541
+ *			Victor Domiciano - 8641963
+ *
+ * Compilacao: javac Travessia.java
+ * Dependencias: StdDraw.java
+ *
+ * Classe que modela uma travessia realizada no experimento.
+ *
+ *******************************************************************/
+
 public class Travessia {
 	String nome;
 	double[] posicao;
@@ -11,11 +24,6 @@ public class Travessia {
 		nome = nom;
 		posicao = pos;
 		tempos = tem;
-		System.out.println("Nome: " + nome + " ");
-		for (int i = 0; i < pos.length; i++) {
-			System.out.println(i + " " + tempos[i] + " " + posicao[i]);
-		//System.out.println("\n");
-		}
 		tipo = tip;
 		vmedia = getVelMedia (pos, tem);
 		if (!tip)
@@ -53,8 +61,6 @@ public class Travessia {
 
 	public void gerarImg () {
 		//dimensionar
-		//StdDraw.setXscale(0, 150);
-       	//StdDraw.setYscale(0, 150);
        	StdDraw.setScale(-.05, 200);
        	StdDraw.setPenRadius(.002);
 		//calcular Euler
@@ -135,9 +141,6 @@ public class Travessia {
  			String sposicao = String.format("%.3f", posicao[i]);
        		StdDraw.textLeft(tempos[i], posicao[i],"(" + stempo+ ", " + sposicao + ")");
        	}
-       	/*StdDraw.setPenColor(StdDraw.BLACK);
-       	for (int i = 1; i <= 10; i++)
-       		StdDraw.line(dt*i, 0, dt*i, 1000);*/
 		StdDraw.save(nome + ".png");
 	}
 }
