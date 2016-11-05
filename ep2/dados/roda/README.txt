@@ -2,6 +2,7 @@ Raio da roda: 26 cm
 Circunferência da roda: 1,63 m
 
 Os dados estão no seguinte formato:
-[tempo em s no ponto mais baixo da roda] [velocidade em rad/s nesse ponto]
-[tempo em s no ponto mais alto da roda] [velocidade em rad/s nesse ponto]
+[x: voltas completadas] [t: tempo em segundos] [v: velocidade em rad/s] [a: aceleração em g]
+
+Obs. O ponto inicial é sempre o ponto mais baixo da roda.
 
