@@ -1,4 +1,4 @@
-Comprimento da corda: 55 cm
+Comprimento da corda: 50 cm
 Ângulo inicial: 10º
 
 Os dados estão no seguinte formato:
