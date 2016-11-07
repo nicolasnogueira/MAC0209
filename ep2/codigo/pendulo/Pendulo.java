@@ -4,14 +4,12 @@ public class Pendulo {
         String[] file = new String[21];
         double[][] state = new double[20][3];
         double[] rate = new double[3];
-        double eps = .001;
-        int dir = 1;
-        int osc = 0, x = 0;
-        double y;
+        double eps = .001, y;
+        int dir = 1, x = 0;
         file = StdIn.readAllStrings();
         StdDraw.setPenColor(StdDraw.RED);
         StdDraw.setXscale(0, 900);
-        StdDraw.setYscale(-3, 3);
+        StdDraw.setYscale(-2.5, 2.5);
         for (int i = 1; i < 21; i++) {
             state[i-1][0] = 0;
             if (file[i].length() == 13)
@@ -43,22 +41,14 @@ public class Pendulo {
                 j++;
             }
             pendulo.getRate(pendulo.getState(), rate);
-            if (dir == 1) {
-                pendulo.state[1] += rate[1];
-                pendulo.state[0] += pendulo.state[1] / 40;
-            }
-            else {
-                pendulo.state[1] -= rate[1];
-                pendulo.state[0] -= pendulo.state[1] / 40;
-            }
+            pendulo.state[1] += dir*rate[1];
+            pendulo.state[0] += dir*pendulo.state[1] / 40;
             if (pendulo.state[1] < eps) {
                 pendulo.state[1] = 0;
                 if (dir == 1)
                     dir = -1;
-                else {
-                    osc++;
+                else
                     dir = 1;
-                }
             }
             StdDraw.line(x, y, x+1, dir*pendulo.state[1]);
             y = dir*pendulo.state[1];
