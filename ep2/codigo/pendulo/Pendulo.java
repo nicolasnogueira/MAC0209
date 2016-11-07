@@ -33,17 +33,15 @@ public class Pendulo {
                     state[i-1][1] = Double.parseDouble(file[i].substring(11));
                 }
         }
-        pendulo.initializeState(state[0]);
+        pendulo.initializeState(state[3]);
         pendulo.A = 0;
-        pendulo.gamma = 0.1;
         y = state[0][1];
         int j = 0;
         for (int i = 0; i < 900; i++) {
-            /* if (i % 45 == 0) {
-                pendulo.gamma = state[j][1] / 5;
+            if (i % 45 == 0) {
+                pendulo.gamma = Math.min(.18, state[j][1] / 10);
                 j++;
-                // StdOut.println(pendulo.gamma);
-            } */
+            }
             pendulo.getRate(pendulo.getState(), rate);
             if (dir == 1) {
                 pendulo.state[1] += rate[1];
@@ -63,11 +61,9 @@ public class Pendulo {
                 }
             }
             StdDraw.line(x, y, x+1, dir*pendulo.state[1]);
-            // StdOut.println(dir*pendulo.state[1]);
             y = dir*pendulo.state[1];
             x++;
         }
-        // StdOut.println(osc);
     }
 }
 
