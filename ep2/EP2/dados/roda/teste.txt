@@ -1,0 +1,18 @@
+tempo total: 10,201 s
+massa: 155 g
+
+velocidade no ponto inicial:
+    6,11 rad/s ou 1,5886 m/s
+
+velocidade no ponto mais alto:
+    5,14 rad/s ou 1,3364 m/s
+
+energia no ponto inicial:
+    0,1949 J (cinetica)
+
+energia no ponto mais alto:
+    0,1384 J (cinetica) + 0,78988 J (potencial) = 0,9282 J
+
+energia dissipada:
+    ???? J
+

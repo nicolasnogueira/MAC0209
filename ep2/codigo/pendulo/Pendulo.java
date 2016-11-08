@@ -2,7 +2,7 @@ public class Pendulo {
 
     double g = 9.8;
     double length = 0.55; //em metros
-    double q = 0.8; //amortecimento
+    double q = 1; //amortecimento
     double dt = 0.04;
     int npoints = 900;
 
