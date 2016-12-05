@@ -1,0 +1,8 @@
+Parâmetros usados no teste:
+Number of cars          40
+Road length             400
+Maximum velocity        2
+
+Para p = 0.2, o fluxo foi aproximadamente 0.178, e não houve qualquer indício de congestionamento.
+
+Para p = 0.8, o fluxo variava entre 0.102 e 0.107 aproximadamente, e congestionamentos pequenos (3 a 5 carros) foram bem frequentes. Foi observado também que quando os carros paravam devido à proximidade com o carro da frente, eles demoravam muito mais para voltarem a trafegar (vários steps com v = 0, sendo que o carro da frente já estava bem distante).
