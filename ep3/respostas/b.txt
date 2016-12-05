@@ -1,0 +1,10 @@
+cars            minimum road length
+1               10
+2               20
+5               50
+10              100
+20              200
+30              300
+40              400
+
+O comprimento mínimo da estrada tal que não diminui o fluxo de carros é aproximadamente o comprimento cuja densidade de carros é 0.1, ou seja, o comprimento da estrada é 10 vezes maior que o comprimento dos carros somados.
