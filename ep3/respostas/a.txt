@@ -1,0 +1,8 @@
+"Explain its qualitative shape."
+O gráfico indica a densidade ideal de carros para um determinado comprimento de estrada que maximiza o fluxo.
+Valores menores que a densidade ideal formam espaços vazios não aproveitados, onde poderiam ter carros trafegando.
+Valores maiores que a densidade ideal formam congestionamentos.
+
+"At what density do traffic jams begin to occur?"
+Na densidade correspondente ao ponto de máximo local do gráfico, ou seja, no ponto onde o fluxo é máximo.
+
