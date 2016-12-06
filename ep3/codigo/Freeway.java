@@ -91,6 +91,14 @@ public class Freeway implements Drawable {
       flow += v[i];
     }
     steps++;
+    computeDistributions();
+    computeSpaceTimeDiagram();
+  }
+
+  //printa distribuicoes de velocidades e distancias entre carros
+  public void computeDistributions() {
+    distGaps = new TreeMap<Integer, Integer>();
+    distVel = new TreeMap<Integer, Integer>();
     int tem;
     for (int ind : v) {
       tem = 0;
@@ -122,7 +130,6 @@ public class Freeway implements Drawable {
 
       System.out.println(key + ": " + value);
     } 
-    computeSpaceTimeDiagram();
   }
 
   public void computeSpaceTimeDiagram() {
