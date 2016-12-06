@@ -6,6 +6,8 @@
  */
 
 import java.awt.Graphics;
+import java.lang.*;
+import java.util.*;
 import org.opensourcephysics.display.*;
 import org.opensourcephysics.frames.*;
 import org.opensourcephysics.display2d.*;
@@ -25,6 +27,8 @@ public class Freeway implements Drawable {
   public int numberOfCars;
   public int maximumVelocity;
   public double p;             // probability of reducing velocity
+  public TreeMap<Integer, Integer> distGaps;
+  public TreeMap<Integer, Integer> distVel;
   private CellLattice road;
   public double flow;
   public int steps, t;
@@ -64,6 +68,8 @@ public class Freeway implements Drawable {
    * Does one time step
    */
   public void step() {
+    distGaps = new TreeMap<Integer, Integer>();
+    distVel = new TreeMap<Integer, Integer>();
     for(int i = 0;i<numberOfCars;i++) {
       xtemp[i] = x[i];
     }
@@ -85,6 +91,37 @@ public class Freeway implements Drawable {
       flow += v[i];
     }
     steps++;
+    int tem;
+    for (int ind : v) {
+      tem = 0;
+      if (distVel.containsKey(ind)) {
+        tem = distVel.get(ind);
+      }
+      distVel.put(ind, tem + 1);
+    }
+    System.out.println("Tempo " + t + "\nVelocidades: Quantidade");
+    for(Map.Entry<Integer,Integer> entry : distVel.entrySet()) {
+      Integer key = entry.getKey();
+      Integer value = entry.getValue();
+
+      System.out.println(key + ": " + value);
+    }    
+    tem = 0;
+    for (int ind = 1; ind < xtemp.length; ind++) {
+      int gap = Math.abs(x[ind-1] - x[ind]);
+      tem = 0;
+      if (distGaps.containsKey(gap)) {
+        tem = distGaps.get(gap);
+      }
+      distGaps.put(gap, tem + 1);
+    }
+    System.out.println("Tempo " + t + "\nDistâncias: Quantidade");
+    for(Map.Entry<Integer,Integer> entry : distGaps.entrySet()) {
+      Integer key = entry.getKey();
+      Integer value = entry.getValue();
+
+      System.out.println(key + ": " + value);
+    } 
     computeSpaceTimeDiagram();
   }
 
@@ -124,6 +161,7 @@ public class Freeway implements Drawable {
     g.drawString("Number of Steps = "+steps, 10, 20);
     g.drawString("Flow = "+ControlUtils.f3(flow/(roadLength*steps)), 10, 40);
     g.drawString("Density = "+ControlUtils.f3(((double) numberOfCars)/(roadLength)), 10, 60);
+    g.drawString("Kappa", 10, 80);
   }
 }
 
