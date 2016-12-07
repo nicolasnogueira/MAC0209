@@ -1,0 +1,4 @@
+As lacunas são menores pois as ultrapassagens são mais frequentes (em geral, lacunas grandes diminuem rapidamente, devido à diferença entre a velocidade máxima dos carros e dos caminhões).
+A distribuição das velocidades, nos casos onde não ocorrem congestionamentos (ou que ocorrem raramente) é mais uniforme do que com a velocidade máxima igual para todos os veículos, pois em geral os carros variam suas velocidades entre a velocidade máxima do caminhão (que no programa foi colocado como sendo metade da velocidade máxima dos carros, para facilitar os cálculos) e a velocidade máxima própria deles; os caminhões variam suas velocidades entre a velocidade máxima própia deles e 0.
+Nos casos onde ocorrem congestionamentos com frequência, a distribuição das velocidade é muito semelhante.
+

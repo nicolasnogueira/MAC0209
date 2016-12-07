@@ -1,0 +1,2 @@
+O fluxo é maior na estrada de duas pistas do que na estrada de apenas uma pista, devido à possibilidade de ultrapassagem que os veículos têm.
+Também se observa que a frequência de congestionamentos diminui, assim como o tamanho deles.
