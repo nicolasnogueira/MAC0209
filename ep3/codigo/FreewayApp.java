@@ -17,7 +17,7 @@ import org.opensourcephysics.frames.*;
  * @version 1.0  revised 06/24/05
  */
 public class FreewayApp extends AbstractSimulation {
-  Freeway freeway = new Freeway();
+  FreewayG freeway = new FreewayG();
   DisplayFrame display = new DisplayFrame("Freeway");
   LatticeFrame spaceTime = new LatticeFrame("space", "time", "Space Time Diagram");
 
